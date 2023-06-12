@@ -20,3 +20,4 @@ Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/', function () {
     return response()->json(['message' => 'success']);
 });
+//teste
