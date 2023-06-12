@@ -42,10 +42,10 @@ jobs:
           ref: main
 
       - name: Deploy to Staging server
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --exclude .git --exclude .docker --exclude .github"
+          ARGS: "-rltgoDzvO --exclude .git --exclude .github"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           TARGET: /home/${{ secrets.SSH_USER }}/ci-cd
